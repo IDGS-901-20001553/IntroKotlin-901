@@ -1,6 +1,7 @@
 package org.utl.introkotlin_901.ejemplo2
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,10 +13,22 @@ class Resultado : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_resultado)
+
+        val tvResult=findViewById<TextView>(R.id.tvResult)
+        val name:String=intent.extras?.getString("EXTRA_NAME").orEmpty()
+        tvResult.text="hola $name"
+
+
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
     }
+
+
+    //funcines
+
 }

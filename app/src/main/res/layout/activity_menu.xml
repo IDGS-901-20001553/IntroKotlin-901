@@ -18,6 +18,15 @@
 
         />
 
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="365dp"
+        android:layout_height="wrap_content"
+        android:text="Ejemplo 1"
+
+        />
+
+
 
 
 

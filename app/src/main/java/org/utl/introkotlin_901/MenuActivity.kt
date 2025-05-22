@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import org.utl.introkotlin_901.Cinepolis.cinepolis
 import org.utl.introkotlin_901.ejemplo1.SumaActivity
 
 class MenuActivity : AppCompatActivity() {
@@ -17,6 +18,9 @@ class MenuActivity : AppCompatActivity() {
 
         val btnSaludo = findViewById<Button>(R.id.btn1)
         btnSaludo.setOnClickListener { navegateToSaludo() }
+
+        val btnCinepolis = findViewById<Button>(R.id.btn2)
+        btnCinepolis.setOnClickListener { navegateToCinepolis() }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -30,6 +34,9 @@ class MenuActivity : AppCompatActivity() {
         val intent = Intent(this, SumaActivity::class.java)
         startActivity(intent)
     }
-
+    private fun navegateToCinepolis() {
+        val intent = Intent(this, cinepolis::class.java)
+        startActivity(intent)
+    }
 
 }
